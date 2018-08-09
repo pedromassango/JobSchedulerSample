@@ -34,9 +34,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Start the job
         JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
-        scheduler.schedule(builder.build());
+        // start and get the result
+        int jobResult = scheduler.schedule(builder.build());
 
-        showStatus("Job running");
+        if(jobResult == JobScheduler.RESULT_FAILURE) {
+            showStatus("Job failed to start");
+        }else if(jobResult == JobScheduler.RESULT_SUCCESS){
+            showStatus("Job Running");
+        }
     }
 
     // To stop the job

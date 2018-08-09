@@ -53,6 +53,9 @@ public class MyJobService extends JobService {
         return false;
     }
 
+    /**
+     * Thread to run on this JobService
+     */
     class JobThread extends Thread{
 
         boolean stopThread = false;
