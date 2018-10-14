@@ -64,7 +64,9 @@ public class MyJobService extends JobService {
         public void run() {
             int count = 0;
 
-            // TODO: this will block the UI because JobService run on mainThread.
+            // this will block the UI because JobService run on mainThread.
+            // Now it is safe to execute because we are inside of a background
+            // Thread
             while (count != 100 && !stopThread){
                 count++;
 

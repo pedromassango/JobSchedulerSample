@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     // To stop job
     public void onStartJob(View v){
         JobInfo.Builder builder = new JobInfo.Builder(0, serviceComponentName);
-        builder.setOverrideDeadline( 1000); // delay time after scheduled the job
+        builder.setOverrideDeadline( 1000); // delay to start the job
 
         // Start the job
         JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
